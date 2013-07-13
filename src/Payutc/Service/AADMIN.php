@@ -80,7 +80,7 @@ class AADMIN {
 			$txt = new ComplexData(array($don['err_code'],$don['err_name'],$don['err_description']));
 			return $txt->csvArrays();
 		} else {
-			return "430";
+			return "Unknow error $id";
 		}
 	}
 

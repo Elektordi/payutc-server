@@ -434,7 +434,11 @@ class User {
             }
             throw new GingerFailure($ex);
         }
-    
+
+	if(!is_object($gingerUser)) {
+		throw new GingerFailure("Ginger is null");
+	}
+
         // Add the user to payutc
         Dbal::conn()->insert('ts_user_usr', array(
             'usr_firstname' => $gingerUser->prenom,
