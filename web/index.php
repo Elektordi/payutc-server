@@ -8,6 +8,9 @@ require_once 'config.inc.php';
 
 $app = new \Slim\Slim(\Payutc\Config::get('slim_config'));
 
+require_once 'providers.inc.php';
+
+
 // JSON route
 $app->map('/:service/:method', function($service, $method) use ($app) {
     $dispatcher = new \Payutc\Dispatcher\Json();
